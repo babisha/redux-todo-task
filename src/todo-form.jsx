@@ -8,9 +8,18 @@ function TodoForm() {
   const [value, setValue] = useState("");
 
   const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
+    let date = new Date();
+    let time = date.getTime();
     e.preventDefault();
-    dispatch(increment({ name: value }));
+    let todoObj = {
+      id: time,
+      todo: value,
+      completed: false,
+    };
+    setValue("");
+    // dispatch(increment({ name: value }));
   };
   return (
     <>
@@ -22,10 +31,11 @@ function TodoForm() {
           <input
             type="text"
             placeholder="Type your name"
+            required
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
-          <Button>SUBMIT</Button>
+          <button type="submit">ADD</button>
         </form>
       </div>
     </>
