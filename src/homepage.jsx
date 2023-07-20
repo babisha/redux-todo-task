@@ -1,8 +1,15 @@
 import React from "react";
 import "./App.css";
 import Button from "./components/button";
+import { useNavigate } from "react-router-dom";
+import TodoForm from "./todo-form";
 
 function Homepage() {
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    navigate("/todo-form");
+  };
+
   return (
     <>
       <div className="header">
@@ -12,7 +19,7 @@ function Homepage() {
         <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWUyaWsweGR5emE4d3IyZTltazVtOTFvM2xpM3V2ZjZhN2djaDJuMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/SxFXYgj3u4dXrqOsWv/giphy.gif" />
       </div>
       <div className="primary-button">
-        <Button>VIEW TODO LISTS</Button>
+        <button onClick={handleButtonClick}>VIEW TODO LISTS</button>
       </div>
     </>
   );

@@ -4,20 +4,22 @@ import { useDispatch } from "react-redux";
 import { increment } from "./features/todo/todo-slice";
 import Homepage from "./homepage";
 import { Route, Routes } from "react-router-dom";
+import TodoForm from "./todo-form";
 
 function App() {
-  const [value, setValue] = useState();
+  // const [value, setValue] = useState();
 
-  const dispatch = useDispatch();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(increment({ name: value }));
-  };
+  // const dispatch = useDispatch();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   dispatch(increment({ name: value }));
+  // };
 
   return (
     <>
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/todo-form" element={<TodoForm />} />
       </Routes>
 
       {/* <form onSubmit={handleSubmit}>
