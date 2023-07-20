@@ -12,7 +12,7 @@ function Homepage() {
         <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWUyaWsweGR5emE4d3IyZTltazVtOTFvM2xpM3V2ZjZhN2djaDJuMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/SxFXYgj3u4dXrqOsWv/giphy.gif" />
       </div>
       <div className="primary-button">
-        <Button>View Todo Lists</Button>
+        <Button>VIEW TODO LISTS</Button>
       </div>
     </>
   );
