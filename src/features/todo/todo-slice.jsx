@@ -1,52 +1,45 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from "uuid";
 
-const todoSlice = createSlice({ 
-    name: 'todo',
-    initialState: [
-        { id: 1, title: 'todo1', completed: false },
-        { id: 2, title: 'todo2', completed: false },
-        { id: 3, title: 'todo3', completed: false },
-        { id: 4, title: 'todo4', completed: false },
-        { id: 5, title: 'todo5', completed: false },
-        { id: 6, title: 'todo5', completed: false },
+const todoSlice = createSlice({
+  name: "todo",
+  initialState: [
+    { id: uuidv4(), title: "Buy groceries", completed: false },
+    { id: uuidv4(), title: "Make breakfast", completed: false },
+    { id: uuidv4(), title: "Water plants", completed: false },
+    { id: uuidv4(), title: "Call insurance", completed: false },
+    { id: uuidv4(), title: "Assignment #19", completed: false },
+    { id: uuidv4(), title: "File tax", completed: false },
+  ],
+  reducers: {
+    addTodo: (state, action) => {
+      // this will update the state
 
-    ],
-    reducers : {
-        addTodo: (state, action) => {
-            // this will update the state
-          
-          const newTodo = {
-            id: Date.now(),
-            title: action.payload.title,
-            completed: action.payload.completed
-        
-          
-          };
-        state.push(newTodo);
-        return state
+      const newTodo = {
+        id: Date.now(),
+        title: action.payload.title,
+        completed: action.payload.completed,
+      };
+      state.push(newTodo);
+      return state;
     },
     toggleComplete: (state, action) => {
-        const index = state.findIndex(
-            (todo) => todo.id === action.payload.id
-        );
-        state[index].completed = action.payload.completed;
+      const index = state.findIndex((todo) => todo.id === action.payload.id);
+      state[index].completed = action.payload.completed;
     },
 
-    // toggleComplete: (state, action) => { 
-    //     const index = state.findIndex((todo) => todo.id === action.payload.id); 
-    //     if (index !== -1) { const updatedTodo = { ...state[index], completed: action.payload.completed }; 
+    // toggleComplete: (state, action) => {
+    //     const index = state.findIndex((todo) => todo.id === action.payload.id);
+    //     if (index !== -1) { const updatedTodo = { ...state[index], completed: action.payload.completed };
     // return [...state.slice(0, index), updatedTodo, ...state.slice(index + 1)]; } return state; },
 
-    
-   
-    deleteTodo : (state, action) => {
-        return state.filter((todo)=> todo.id !== action.payload.id)
-    }
-}
+    deleteTodo: (state, action) => {
+      return state.filter((todo) => todo.id !== action.payload.id);
+    },
+  },
 });
 
-const todoReducer = todoSlice.reducer
+const todoReducer = todoSlice.reducer;
 
-
-export const { addTodo, toggleComplete, deleteTodo } = todoSlice.actions
-export default todoReducer
+export const { addTodo, toggleComplete, deleteTodo } = todoSlice.actions;
+export default todoReducer;

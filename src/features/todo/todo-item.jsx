@@ -23,7 +23,9 @@ const TodoItem = ({ id, title, completed }) => {
           onChange={handleCompleteClick}
         ></input>
         {title}
-        <button onClick={handleDeleteClick}>DELETE</button>
+        <button className="del" onClick={handleDeleteClick}>
+          DELETE
+        </button>
       </form>
     </div>
   );

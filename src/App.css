@@ -72,15 +72,29 @@ body {
   display: flex;
   list-style: none;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 20px 0px;
-
 }
 
 .task-container li {
   margin: 10px;
-  
+}
+/* .task-container form,
+.task-container,
+input.del {
+  display: flex;
+  align-items: center;
+} */
 
+.del {
+  display: flex;
+  align-items: center;
+  margin: 0px 20px;
+  justify-content: space-between;
 }
 
+.tasks form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
