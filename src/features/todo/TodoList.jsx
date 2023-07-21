@@ -19,7 +19,6 @@ export const TodoList = ({ onDelete }) => {
               title={todo.title}
               completed={todo.completed}
             />
-            {/* <button onClick={() => handleDelete(todo.id)}>DELETE</button> */}
           </li>
         ))}
       </div>

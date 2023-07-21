@@ -4,12 +4,12 @@ import { v4 as uuidv4 } from "uuid";
 const todoSlice = createSlice({
   name: "todo",
   initialState: [
-    { id: uuidv4(), title: "Buy groceries", completed: false },
-    { id: uuidv4(), title: "Make breakfast", completed: false },
-    { id: uuidv4(), title: "Water plants", completed: false },
-    { id: uuidv4(), title: "Call insurance", completed: false },
-    { id: uuidv4(), title: "Assignment #19", completed: false },
-    { id: uuidv4(), title: "File tax", completed: false },
+    { id: uuidv4(), title: "Project 1", completed: false },
+    { id: uuidv4(), title: "Project 2", completed: false },
+    { id: uuidv4(), title: "Project 3", completed: false },
+    { id: uuidv4(), title: "Project 4", completed: false },
+    { id: uuidv4(), title: "Project 5", completed: false },
+    { id: uuidv4(), title: "Project 6", completed: false },
   ],
   reducers: {
     addTodo: (state, action) => {
