@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from '../todo/todo-slice';
-import { TodoList } from './TodoList'
-
+import { addTodo, deleteTodo } from "../todo/todo-slice";
+import { TodoList } from "./TodoList";
 
 function AddTodo() {
-  const [value, setValue] = useState();
- 
+  const [value, setValue] = useState("");
+
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
-         e.preventDefault();
-        dispatch(addTodo({ title: value}));
-    
+    e.preventDefault();
+    dispatch(addTodo({ title: value }));
+  };
+
+  const handleDelete = (id) => {
+    dispatch(deleteTodo({ id }));
   };
   return (
     <>
@@ -31,9 +33,9 @@ function AddTodo() {
           <button type="submit">ADD</button>
         </form>
       </div>
-    <TodoList />
+      <TodoList onDelete={handleDelete} />
     </>
   );
 }
- 
+
 export default AddTodo;

@@ -51,9 +51,10 @@ body {
   padding: 8px;
   border-radius: 10px;
   border-color: white;
-  margin: 0px 10px;
   border-style: solid;
   width: 250px;
+  margin-right: 20px;
+  font-size: medium;
 }
 
 .container button {
@@ -64,23 +65,51 @@ body {
   border-style: solid;
   border-width: 2px;
   margin: 0px 10px;
-
   color: white;
+  font-size: medium;
 }
 
 .task-container {
   display: flex;
   list-style: none;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0px;
-
+  justify-content: space-evenly;
+  border-style: groove;
+  border-radius: 20px;
+  width: max-content;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .task-container li {
   margin: 10px;
-  
-
 }
 
+.del button {
+  border-style: none;
+  border-color: white;
+  border-width: 2px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: black;
+  margin-left: 20px;
+
+  font-size: larger;
+}
+
+.tasks form {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.tasks {
+  display: flex;
+}
+
+.tasklist {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
