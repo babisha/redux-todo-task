@@ -16,7 +16,7 @@ const todoSlice = createSlice({
       // this will update the state
 
       const newTodo = {
-        id: Date.now(),
+        id: uuidv4(),
         title: action.payload.title,
         completed: action.payload.completed,
       };
@@ -25,16 +25,14 @@ const todoSlice = createSlice({
     },
     toggleComplete: (state, action) => {
       const index = state.findIndex((todo) => todo.id === action.payload.id);
-      state[index].completed = action.payload.completed;
+      if (index !== -1) {
+        state[index].completed = action.payload.completed;
+      }
     },
 
-    // toggleComplete: (state, action) => {
-    //     const index = state.findIndex((todo) => todo.id === action.payload.id);
-    //     if (index !== -1) { const updatedTodo = { ...state[index], completed: action.payload.completed };
-    // return [...state.slice(0, index), updatedTodo, ...state.slice(index + 1)]; } return state; },
-
     deleteTodo: (state, action) => {
-      return state.filter((todo) => todo.id !== action.payload.id);
+      const todoIdToDelete = action.payload.id;
+      return state.filter((todo) => todo.id !== todoIdToDelete);
     },
   },
 });
