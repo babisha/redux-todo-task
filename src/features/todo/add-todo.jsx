@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo, deleteTodo } from "../todo/todo-slice";
+import { useNavigate } from "react-router-dom";
 import { TodoList } from "./TodoList";
 
 function AddTodo() {
+  const navigate = useNavigate();
   const [value, setValue] = useState("");
+
+  const handleHomeButtonClick = () => {
+    navigate("/");
+  };
 
   const dispatch = useDispatch();
 
@@ -19,7 +25,7 @@ function AddTodo() {
   return (
     <>
       <div className="header">
-        <h1>DAILYLIST</h1>
+        <h1 onClick={handleHomeButtonClick}>DAILYLIST</h1>
       </div>
       <div>
         <form className="container" onSubmit={handleSubmit}>
