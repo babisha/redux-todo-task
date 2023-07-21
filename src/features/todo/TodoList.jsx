@@ -14,7 +14,11 @@ export const TodoList = ({ onDelete }) => {
       <div className="task-container">
         {todos.map((todo) => (
           <li key={todo.id}>
-            <TodoItem title={todo.title} completed={todo.completed} />
+            <TodoItem
+              id={todo.id}
+              title={todo.title}
+              completed={todo.completed}
+            />
             {/* <button onClick={() => handleDelete(todo.id)}>DELETE</button> */}
           </li>
         ))}
