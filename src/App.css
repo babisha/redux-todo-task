@@ -67,3 +67,20 @@ body {
 
   color: white;
 }
+
+.task-container {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+
+}
+
+.task-container li {
+  margin: 10px;
+  
+
+}
+

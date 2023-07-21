@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { increment } from "./features/todo/todo-slice";
-import Button from "./components/button";
-import "./App.css";
+import { addTodo } from '../todo/todo-slice';
+import { TodoList } from './TodoList'
 
-function TodoForm() {
-  const [value, setValue] = useState("");
 
+function AddTodo() {
+  const [value, setValue] = useState();
+ 
   const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(increment({ name: value }));
+         e.preventDefault();
+        dispatch(addTodo({ title: value}));
+    
   };
   return (
     <>
@@ -22,14 +24,16 @@ function TodoForm() {
           <input
             type="text"
             placeholder="Type your name"
+            required
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
-          <Button>SUBMIT</Button>
+          <button type="submit">ADD</button>
         </form>
       </div>
+    <TodoList />
     </>
   );
 }
-
-export default TodoForm;
+ 
+export default AddTodo;
