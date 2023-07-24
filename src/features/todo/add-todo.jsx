@@ -17,6 +17,7 @@ function AddTodo() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addTodo({ title: value }));
+    setValue("");
   };
 
   const handleDelete = (id) => {
