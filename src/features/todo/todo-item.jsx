@@ -42,6 +42,7 @@ const TodoItem = ({ id, title, completed }) => {
         <>
           <form onSubmit={handleCompleteClick}>
             <input
+              className="checkBox"
               type="checkbox"
               checked={completed}
               onChange={handleCompleteClick}

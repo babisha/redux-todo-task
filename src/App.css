@@ -81,27 +81,26 @@ body {
   padding-right: 100px;
 }
 
-.task-container li {
-  margin: 10px;
-}
-
 .del button {
-  border-style: none;
+  /* border-style: none; */
   border-color: white;
-  border-width: 2px;
+  border-width: 1px;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 40%;
   background-color: transparent;
   color: black;
   margin-left: 20px;
-
-  font-size: larger;
+  font-size: large;
 }
 
 .tasks form {
   display: flex;
   align-items: center;
-  padding-left: 20px;
+  /* padding-left: 20px; */
+}
+
+.checkBox {
+  margin-right: 15px;
 }
 
 .tasks {
@@ -112,4 +111,6 @@ body {
   display: flex;
   justify-content: space-evenly;
   margin-top: 20px;
+  font-style: italic;
+  font-weight: bold;
 }
