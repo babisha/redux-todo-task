@@ -32,7 +32,7 @@ function AddTodo() {
         <form className="container" onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Type your name"
+            placeholder="Add your todo... "
             required
             value={value}
             onChange={(e) => setValue(e.target.value)}
